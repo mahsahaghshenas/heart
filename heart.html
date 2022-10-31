@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heart</title>
+    <style>
+        *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #ok{
+            width: 200px;
+            height: 200px;
+/*            border: 1px solid blue;*/
+            margin: 100px auto;
+            transition: 30s;
+            transform-style: preserve-3d
+        }
+        #ok:hover{
+            transform: rotateY(3600deg)
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform: rotate(45deg);
+            transform-style: preserve-3d;
+            transition: 5s
+        }
+        .box>div{
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            }
+
+        .box>div:nth-of-type(2){
+            background: #6d0404;
+            transform:rotateX(90deg) rotateY(45deg) rotateZ(-45deg);
+            }
+        .box>div::before, .box>div::after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            border-radius:50%;
+        }
+        .box>div::before{
+            transform: translateY(-50%);
+        }
+        .box>div::after{
+            transform: translate(-50%, -100%);
+        }
+        .box:hover{
+            transform: rotateX(0deg) rotateY(3600deg)rotateZ(45deg)
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="ok">
+        <div class="box">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
